@@ -1,0 +1,327 @@
+/* Styles for the multiple-choice quiz (vca/) */
+.badge {
+    font-family: Inter, system-ui, sans-serif !important;
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-right: 8px;
+    vertical-align: 3px
+}
+
+/* setup */
+.section-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--muted);
+    margin: 18px 0 8px
+}
+
+.quick {
+    display: flex;
+    gap: 12px;
+    margin-top: -4px;
+    margin-bottom: 6px
+}
+
+.chapters {
+    display: grid;
+    gap: 6px
+}
+
+.chapter {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 11px 14px;
+    cursor: pointer;
+    user-select: none
+}
+
+.chapter input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    margin: 0;
+    flex: none
+}
+
+.chapter .nr {
+    color: var(--muted);
+    font-size: 13px;
+    min-width: 20px
+}
+
+.chapter .name {
+    flex: 1;
+    font-weight: 500;
+    font-size: 15px
+}
+
+.chapter .count {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+.seg {
+    display: flex;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 3px;
+    gap: 3px
+}
+
+.seg button {
+    flex: 1;
+    border: none;
+    background: none;
+    padding: 9px 8px;
+    border-radius: 7px;
+    font: inherit;
+    font-size: 14px;
+    color: var(--muted);
+    cursor: pointer
+}
+
+.seg button.on {
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600
+}
+
+.primary {
+    width: 100%;
+    margin-top: 22px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer
+}
+
+.primary:disabled {
+    opacity: .4;
+    cursor: default
+}
+
+.secondary {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--card);
+    color: var(--ink);
+    font: inherit;
+    font-size: 15px;
+    cursor: pointer
+}
+
+/* quiz */
+.progress {
+    height: 6px;
+    background: var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px
+}
+
+.progress div {
+    height: 100%;
+    background: var(--accent);
+    width: 0;
+    transition: width .25s
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 14px
+}
+
+.question {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 18px 20px 22px
+}
+
+.tag {
+    font-size: 12px;
+    color: var(--muted)
+}
+
+.question h2 {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 600;
+    margin: 8px 0 0
+}
+
+.options {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 8px
+}
+
+.option {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    text-align: left;
+    background: var(--card);
+    border: 1.5px solid var(--line);
+    border-radius: 12px;
+    padding: 13px 14px;
+    font: inherit;
+    font-size: 15px;
+    line-height: 1.4;
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color .15s
+}
+
+.option:hover:not(:disabled) {
+    border-color: var(--accent)
+}
+
+.option .key {
+    flex: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.option:disabled {
+    cursor: default
+}
+
+.option.correct {
+    border-color: var(--good);
+    background: var(--accent-soft)
+}
+
+.option.correct .key {
+    background: var(--good);
+    color: #fff
+}
+
+.option.wrong {
+    border-color: var(--bad);
+    background: var(--bad-soft)
+}
+
+.option.wrong .key {
+    background: var(--bad);
+    color: #fff
+}
+
+.option.dim {
+    opacity: .55
+}
+
+.feedback {
+    margin-top: 14px
+}
+
+.verdict {
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0 0 4px
+}
+
+.verdict.ok {
+    color: var(--good)
+}
+
+.verdict.no {
+    color: var(--bad)
+}
+
+.why {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5
+}
+
+.feedback .primary {
+    margin-top: 14px
+}
+
+.keys {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 14px
+}
+
+/* result */
+.result {
+    text-align: center;
+    padding-top: 30px
+}
+
+.result .big {
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--accent)
+}
+
+.result p {
+    color: var(--muted)
+}
+
+.misslist {
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 4px 14px;
+    margin: 18px 0
+}
+
+.misslist div {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+    line-height: 1.4
+}
+
+.misslist div:last-child {
+    border: none
+}
+
+.misslist strong {
+    display: block;
+    margin-bottom: 3px
+}
+
+.misslist span {
+    color: var(--good)
+}

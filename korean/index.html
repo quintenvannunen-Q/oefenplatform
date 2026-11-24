@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Korean Flashcards</title>
+  <meta name="apple-mobile-web-app-title" content="한글">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/korean-flashcards.css"
+
+<body>
+  <main class="wrap">
+    <nav class="crumbs"><a href="../">← All platforms</a></nav>
+    <header>
+      <h1><span>한글</span>Flashcards</h1>
+      <button class="linkbtn" id="homeBtn" hidden>← Decks</button>
+    </header>
+
+    <!-- SETUP -->
+    <section id="setup">
+      <div class="section-label">Decks</div>
+      <div class="quick">
+        <button class="linkbtn" id="allBtn">Select all</button>
+        <button class="linkbtn" id="noneBtn">Clear</button>
+      </div>
+      <div class="decks" id="decks"></div>
+
+      <div class="section-label">Show first</div>
+      <div class="seg" id="dirSeg">
+        <button data-v="ko" class="on">Korean</button>
+        <button data-v="en">English</button>
+        <button data-v="mix">Mixed</button>
+      </div>
+
+      <div class="section-label">Mode</div>
+      <div class="seg" id="modeSeg">
+        <button data-v="flip" class="on">Flip cards</button>
+        <button data-v="type">Type answer</button>
+      </div>
+
+      <button class="primary" id="startBtn">Start</button>
+    </section>
+
+    <!-- STUDY -->
+    <section id="study" hidden style="flex:1;display:flex;flex-direction:column">
+      <div class="progress">
+        <div id="bar"></div>
+      </div>
+      <div class="stats"><span id="left"></span><span id="score"></span></div>
+      <div class="scene">
+        <div class="card" id="card">
+          <div class="face front">
+            <span class="tag" id="frontTag"></span>
+            <button class="speak" id="speakF" title="Pronounce" aria-label="Pronounce"></button>
+            <div id="frontText"></div>
+            <span class="hint" id="frontHint">tap to flip</span>
+          </div>
+          <div class="face back">
+            <span class="tag" id="backTag"></span>
+            <button class="speak" id="speakB" title="Pronounce" aria-label="Pronounce"></button>
+            <div id="backText"></div>
+            <div class="sub" id="backSub"></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="flipControls">
+        <div class="answers hidden" id="answers">
+          <button class="again" id="againBtn">Again</button>
+          <button class="got" id="gotBtn">Got it</button>
+        </div>
+        <div class="keys">Space = flip · ← again · → got it</div>
+      </div>
+
+      <div id="typeControls" hidden>
+        <form class="typebox" id="typeForm" autocomplete="off">
+          <input id="typeInput" placeholder="Type the answer…" autocapitalize="off" spellcheck="false">
+          <button type="submit" id="checkBtn">Check</button>
+        </form>
+        <div class="verdict" id="verdict"></div>
+        <div class="answers hidden" id="typeNext" style="grid-template-columns:1fr 1fr">
+          <button class="again" id="tAgain">Count as wrong</button>
+          <button class="got" id="tGot">Count as right</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONE -->
+    <section id="done" class="done" hidden>
+      <div class="big">잘했어요!</div>
+      <p id="doneText"></p>
+      <div class="misslist" id="missList" hidden></div>
+      <button class="primary" id="missBtn" hidden>Practice the missed words</button>
+      <button class="secondary" id="restartBtn">Same decks again</button>
+      <button class="secondary" id="backBtn">Choose decks</button>
+    </section>
+  </main>
+
+  <script src="../data/korean-words.js"></script>
+  <script src="../js/korean-flashcards.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VCA Quiz</title>
+    <meta name="apple-mobile-web-app-title" content="VCA">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/vca-quiz.css">
+</head>
+
+<body>
+    <main class="wrap">
+        <nav class="crumbs"><a href="../">← All platforms</a></nav>
+        <header>
+            <h1><span class="badge">VCA</span>Quiz</h1>
+            <button class="linkbtn" id="homeBtn" hidden>← Hoofdstukken</button>
+        </header>
+
+        <!-- SETUP -->
+        <section id="setup">
+            <div class="section-label">Hoofdstukken</div>
+            <div class="quick">
+                <button class="linkbtn" id="allBtn">Alles selecteren</button>
+                <button class="linkbtn" id="noneBtn">Wissen</button>
+            </div>
+            <div class="chapters" id="chapters"></div>
+
+            <div class="section-label">Aantal vragen</div>
+            <div class="seg" id="countSeg">
+                <button data-v="10">10</button>
+                <button data-v="20">20</button>
+                <button data-v="40">40</button>
+                <button data-v="all" class="on">Alle</button>
+            </div>
+
+            <button class="primary" id="startBtn">Start</button>
+        </section>
+
+        <!-- QUIZ -->
+        <section id="quiz" hidden>
+            <div class="progress">
+                <div id="bar"></div>
+            </div>
+            <div class="stats"><span id="counter"></span><span id="score"></span></div>
+
+            <article class="question">
+                <span class="tag" id="chapterTag"></span>
+                <h2 id="questionText"></h2>
+            </article>
+
+            <ol class="options" id="options"></ol>
+
+            <div class="feedback" id="feedback" hidden>
+                <p class="verdict" id="verdict"></p>
+                <p class="why" id="why"></p>
+                <button class="primary" id="nextBtn">Volgende →</button>
+            </div>
+            <p class="keys">Toetsen 1–4 om te antwoorden · Enter = volgende</p>
+        </section>
+
+        <!-- RESULT -->
+        <section id="result" class="result" hidden>
+            <div class="big" id="pct"></div>
+            <p id="resultText"></p>
+            <div class="misslist" id="missList" hidden></div>
+            <button class="primary" id="missBtn" hidden>Foute vragen opnieuw</button>
+            <button class="secondary" id="restartBtn">Zelfde hoofdstukken opnieuw</button>
+            <button class="secondary" id="backBtn">Hoofdstukken kiezen</button>
+        </section>
+    </main>
+
+    <script src="../data/vca-questions.js"></script>
+    <script src="../js/vca-quiz.js"></script>
+</body>
+
+</html>

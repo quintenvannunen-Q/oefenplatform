@@ -1,0 +1,77 @@
+/* Styles for the start page (index.html) */
+.intro {
+    color: var(--muted);
+    margin: 4px 0 22px;
+    font-size: 15px
+}
+
+.platforms {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px
+}
+
+.platform {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 16px 18px;
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color .15s, transform .15s
+}
+
+.platform:hover {
+    border-color: var(--accent);
+    transform: translateY(-1px)
+}
+
+.platform-label {
+    font-family: "Noto Sans KR", Inter, sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border-radius: 12px;
+    width: 72px;
+    flex: none;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.platform-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px
+}
+
+.platform-title {
+    font-weight: 600;
+    font-size: 17px
+}
+
+.platform-desc {
+    color: var(--muted);
+    font-size: 14px
+}
+
+.platform-arrow {
+    color: var(--muted);
+    font-size: 18px
+}
+
+footer {
+    margin-top: auto;
+    padding-top: 32px;
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center
+}

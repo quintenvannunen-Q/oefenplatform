@@ -1,0 +1,101 @@
+/* Shared styles for every page: colours, fonts, page layout */
+:root {
+  --bg: #f6f4ef;
+  --card: #ffffff;
+  --ink: #1d1f24;
+  --muted: #6b6f78;
+  --line: #e3e0d8;
+  --accent: #3d7a5a;
+  --accent-soft: #e3efe7;
+  --bad: #c2553f;
+  --bad-soft: #f7e4df;
+  --good: #3d7a5a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181c;
+    --card: #22252b;
+    --ink: #eceae4;
+    --muted: #9a9ea7;
+    --line: #33363d;
+    --accent: #6cbf94;
+    --accent-soft: #1f3329;
+    --bad: #e08470;
+    --bad-soft: #3a2420;
+    --good: #6cbf94;
+  }
+}
+
+* {
+  box-sizing: border-box
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Inter, "Noto Sans KR", system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent
+}
+
+.wrap {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column
+}
+
+header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 14px
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600
+}
+
+h1 span {
+  font-family: "Noto Sans KR";
+  color: var(--accent);
+  margin-right: 6px
+}
+
+.linkbtn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px
+}
+
+.linkbtn:hover {
+  color: var(--ink)
+}
+
+.crumbs {
+  margin-bottom: 10px
+}
+
+.crumbs a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px
+}
+
+.crumbs a:hover {
+  color: var(--ink)
+}
+
+[hidden] {
+  display: none !important
+}
